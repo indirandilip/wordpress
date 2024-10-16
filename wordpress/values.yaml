@@ -1,0 +1,19 @@
+mariadb:
+  enabled: true
+  auth:
+    rootPassword: root_password
+    username: wordpress_user
+    password: wordpress_password
+    database: wordpress_db
+
+wordpressUsername: admin
+wordpressPassword: admin_password
+wordpressEmail: admin@example.com
+wordpressFirstName: Admin
+wordpressLastName: User
+wordpressBlogName: "My WordPress Blog"
+
+service:
+  type: NodePort  # Set this to LoadBalancer if using external load balancing
+  port: 80
+
