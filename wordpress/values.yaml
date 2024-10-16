@@ -14,7 +14,16 @@ wordpressLastName: User
 wordpressBlogName: "My WordPress Blog"
 
 service:
-  type: NodePort  # Set this to LoadBalancer if using external load balancing
-  port: 30100
+  enabled: true
+  type: NodePort  # or LoadBalancer, depending on your setup
+  port: 80        # The port that the service will listen on
+  ports:
+    http:
+      port: 80    # The port for HTTP traffic
+      targetPort: 8080 # The port on the pod that the service should forward to
+    https:
+      port: 443   # The port for HTTPS traffic (if TLS is enabled)
+      targetPort: 8443 # The port on the pod for TLS traffic
+
 ingress:
-  enabled: false
+  enabled: true
