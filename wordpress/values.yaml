@@ -15,6 +15,6 @@ wordpressBlogName: "My WordPress Blog"
 
 service:
   type: NodePort  # Set this to LoadBalancer if using external load balancing
-  port: 80
+  port: 30100
 ingress:
   enabled: false
